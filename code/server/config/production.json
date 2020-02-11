@@ -1,0 +1,38 @@
+{
+  "db": "mongodb://mongodb用户:密码@127.0.0.1:端口/数据库",
+  "port": 3005,
+  "base": "网站的地址",
+  "SITE_ROOT_URL": "网站的地址",
+  "ngrok": "代理的 ngrok id",
+  "shop": {
+    "appID": "你的 shop ID",
+    "mchId": "你的 shop mchId",
+    "notifyUrl": "接收通知的 URL",
+    "key": "key"
+  },
+  "wechat": {
+    "appID": "appID",
+    "appSecret": "appSecret",
+    "baseUrl": "测试微信的接入地址",
+    "token": "token"
+  },
+  "mina": {
+    "appid": "小程序 appid",
+    "secret": "小程序 app Secret"
+  },
+  "qiniu": {
+    "AK": "你的七牛 AK",
+    "SK": "你的七牛 SK",
+    "bucket": "你的七牛 bucket",
+    "qiniuURL": "bucket 对应的测试地址"
+  },
+  "cloudinary": {
+    "cloud_name": "你的 cloudinary 账户名",
+    "api_key": "852224485571877",
+    "api_secret": "ht91J3cXl2TnkAgLR-ftK-iasPE",
+    "base": "http://res.cloudinary.com/你的 cloudinary 账户名",
+    "image": "https://api.cloudinary.com/v1_1/你的 cloudinary 账户名/image/upload",
+    "video": "https://api.cloudinary.com/v1_1/你的 cloudinary 账户名/video/upload",
+    "audio": "https://api.cloudinary.com/v1_1/你的 cloudinary 账户名/raw/upload"
+  }
+}

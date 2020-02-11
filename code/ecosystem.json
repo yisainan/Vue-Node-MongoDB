@@ -1,0 +1,41 @@
+{
+  "apps": [
+    {
+      "name": "IceAndFire",
+      "script": "start.js",
+      "env": {
+        "COMMON_VARIABLE": "true"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  "deploy": {
+    "production": {
+      "user": "你的服务器登录名",
+      "host": ["你的服务器 IP"],
+      "port": "你的服务器登录端口 默认 22",
+      "ref": "origin/master",
+      "repo": "你的 git 仓库地址",
+      "path": "/www/icefire/production",
+      "ssh_options": "StrictHostKeyChecking=no",
+      "post-deploy": "yarn install && npm run build && pm2 startOrRestart ecosystem.json --env production",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "plus": {
+      "user": "你的服务器登录名",
+      "host": ["你的服务器 IP"],
+      "port": "你的服务器登录端口 默认 22",
+      "ref": "origin/master",
+      "repo": "你的 git 仓库地址",
+      "ssh_options": "StrictHostKeyChecking=no",
+      "post-deploy": "yarn install && pm2 startOrRestart ecosystem.json --env production",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}

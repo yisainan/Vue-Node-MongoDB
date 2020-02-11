@@ -1,0 +1,197 @@
+@import '~static/sass/var'
+@import '~static/sass/color'
+@import '~static/sass/mixin'
+
+.container
+  +font-dpr(10px)
+  position: relative
+  text-align: center !important
+
+.exam-background
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 0
+  height: 100%
+  background: url('#{$imgCdn}exam-background.jpg') no-repeat
+  background-size: cover
+  filter: brightness(.25)
+
+.exam-main
+  position: absolute
+  top: 15%
+  left: 50%
+  transform: translate(-50%, 0)
+  z-index: 2
+  color: $white
+  font-size: 2em
+  
+  .exam-back
+    position: absolute
+    left: 10%
+    top: -1.5rem
+    z-index: 3
+    font-size: 0.8em
+
+  .exam-title
+    margin-bottom: 10%
+    
+  .exam-content
+    >*
+      width: 80%
+      margin: auto
+      height: 1rem
+      line-height: 1rem
+      +border-box
+    
+    .exam-content-input
+      color: $black
+      text-align: center
+      margin-bottom: 5%
+    .exam-content-warning
+      animation: warning .3s linear
+
+    .exam-content-button
+      margin-top: 6%
+      background: url('#{$imgCdn}exam-download.jpg') no-repeat
+      background-size: cover
+
+.exam-result
+  height: 100%
+  padding-top: 7%
+  +border-box
+  position: relative
+
+  > *
+    width: 100%
+
+  .exam-vortex, .exam-sign
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transform-origin: 0 0
+
+  .exam-vortex
+    width: 6.5rem !important
+    height: 6.5rem
+    z-index: 1
+  
+  .exam-sign
+    font-size: 1.8em
+    text-align: center
+    color: $white
+    z-index: 2
+
+  .exam-card
+    width: 95% !important
+    height: 80%
+    position: relative
+    z-index: 3
+    +border-box
+    padding: 10% 7%
+    margin: auto
+    transition: transform 5s
+    transform: matrix(1, 0, 0, 1, 0, 0)
+    background: url('#{$imgCdn}exam-card.png') no-repeat
+    background-size: 100% 100%
+    border-radius: 1em
+    box-shadow: 0 0 1.2em rgba(255, 255, 255, .5)
+
+    img
+      display: block
+      width: 75%
+      margin: 0 auto .2rem
+
+    .exam-card-title
+      display: inline-block
+      font-size: 1.5em
+      border: .15em solid #e6b467
+      outline: 1.5px solid $black
+      padding: .2em .4em
+      margin-bottom: .5em
+      background: $black
+      color: $white
+
+    .exam-card-role
+      font-size: 2.7em
+      font-weight: bold
+    
+    .exam-card-content
+      font-size: 1.8em
+      margin: .2em auto 0
+
+  .exam-download
+    height: 1.5rem
+    line-height: 1.5rem
+    position: fixed
+    bottom: 0
+    left: 0
+    z-index: 2
+    font-size: 1.9em
+    letter-spacing: .08em
+    text-align: center
+    color: $white
+    background: url('#{$imgCdn}exam-download.jpg') no-repeat
+    background-size: cover
+
+// animation of exam
+
+.rotate-enter-active
+  animation: rotate 5s linear
+
+.rotate-leave-active
+  animation: rotate 5s linear
+  transition: opacity 3.5s
+
+.rotate-leave-to
+  opacity: 0
+
+@keyframes rotate
+  0%
+    transform: rotate(0deg) translate(-50%, -50%)
+  50%
+    transform: rotate(360deg) translate(-50%, -50%)
+  100%
+    transform: rotate(720deg) translate(-50%, -50%)
+
+.fade-enter-active, .fade-leave-active
+  transition: opacity 1.5s
+
+.fade-enter, .fade-leave-to
+  opacity: 0
+
+.slide-top-enter-active, .slide-top-leave-active
+  transition: transform 1s cubic-bezier(.26, .01, .24, 1.74)
+
+.slide-top-enter, .slide-top-leave-to
+  bottom: -1.5rem
+  transform: translateY(1.5rem)
+
+.crawl-enter-active
+  animation: crawl 6s cubic-bezier(.55,-.01, 0, 1.74)
+  transform-origin: 50% 50%
+
+@keyframes crawl
+  0%
+    transform: matrix(0, -.05, .05, 0, 0, 50)
+  30%
+    transform: matrix(.4, -.5, .2, .4, 0, 30)
+  70%
+    transform: matrix(.6, .5, -.5, .6, 0, 10)
+  100%
+    transform: matrix(1, 0, 0, 1, 0, 0)
+
+@keyframes warning
+  0%
+    transform: translateX(0)
+  20%
+    transform: translateX(-5%)
+  40%
+    transform: translateX(5%)
+  60%
+    transform: translateX(-2.5%)
+  80%
+    transform: translateX(2.5%)
+  100%
+    transform: translateX(0)
